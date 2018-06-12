@@ -13,22 +13,13 @@
     <style>
 
     </style>
-    <div id="app" class="container">
-        <h1>{{message}}</h1>
-    </div>
     <div class="container">
-
         <div class="row">
-            <!-- <div class="col-md-15 mx-auto text-center bg-primary mt-5 p-5 rounded"> -->
-            <div class="col-sm-6 bg-primary rounded">
+            <div class="col-md-15 mx-auto text-center bg-primary mt-5 p-5 rounded">
                 <h1 id="w-location"></h1>
-                <button type="button" class="btn btn-primary mx-auto text-center" data-toggle="modal" data-target="#locModal">
-                        Change Location
-                      </button>
                 <h3 class="text-dark" id="w-desc"></h3>
                 <h3 id="w-string"></h3>
                 <img id="w-icon">
-
                 <ul id="w-details" class="list-group mt-3">
                     <li class="list-group-item" id="w-humidity"></li>
                     <li class="list-group-item" id="w-dewpoint"></li>
@@ -37,30 +28,25 @@
                 </ul>
                 <a id="forecast-link" style="color:rgb(20, 10, 65)" target="_blank" href="http://">See Latest Forcast</a>
                 <hr>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#locModal">
+                  Change Location
+                </button>
+                <hr>
+                <div class="text-left bg-secondary">
+                    <ul id="l-details" class="list-group mt-3">
+                        <li class="list-group-item" id="l-station"></li>
+                        <li class="list-group-item" id="l-geo"></li>
+                        <li class="list-group-item" id="l-el"></li>
 
-            </div>
-            <hr>
-            <!-- <div class="text-left bg-secondary"> -->
-            <div class="col-sm-6 bg-primary rounded">
+                    </ul>
+                </div>
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#moreinfoModal">
-                            Station Information
-                          </button>
-                <ul id="l-details" class="list-group mt-3">
-                    <li class="list-group-item" id="more-info-wind"></li>
-                    <li class="list-group-item" id="more-info-pressure"></li>
-                    <li class="list-group-item" id="more-info-visibility"></li>
-                    <li class="list-group-item" id="more-info-obsTime"></li>
-                    <li class="list-group-item" id="more-info-yesterday"></li>
-                    <li class="list-group-item" id="more-info-yesterdayThisTime"></li>
-
-                </ul>
+                    More Information
+                  </button>
 
             </div>
-
 
         </div>
-
-    </div>
     </div>
 
     <!-- Modal -->
@@ -99,7 +85,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="moreinfoModalLabel">Station Details</h5>
+                    <h5 class="modal-title" id="moreinfoModalLabel">Additional Details</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -110,10 +96,10 @@
                 <div class="modal-body">
                     <div class="text-left bg-secondary">
                         <ul id="more-info" class="list-group mt-3">
+                            <li class="list-group-item" id="more-info-obsTime"></li>
+                            <li class="list-group-item" id="more-info-wind"></li>
+                            <li class="list-group-item" id="more-info-pd"></li>
 
-                            <li class="list-group-item" id="l-station"></li>
-                            <li class="list-group-item" id="l-geo"></li>
-                            <li class="list-group-item" id="l-el"></li>
 
                         </ul>
                     </div>
@@ -139,15 +125,5 @@
     <script src="ui.js"></script>
     <script src="app.js"></script>
 </body>
-
-<script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
-<script>
-    var app = new Vue({
-        el: '#app',
-        data: {
-            message: 'Hello Vue',
-        }
-    })
-</script>
 
 </html>
