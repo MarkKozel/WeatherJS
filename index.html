@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- <link rel="stylesheet" href="https://bootswatch.com/4/cerulean/bootstrap.min.css"> -->
-    <link rel="stylesheet" type="text/css" href="../../common/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="https://bootswatch.com/4/cerulean/bootstrap.min.css">
     <title>WeatherJS</title>
 </head>
 
@@ -16,23 +15,29 @@
     </style>
     <div class="container">
         <div class="row">
-            <div class="col-md-15 mx-auto text-center bg-primary mt-5 p-5 rounded">
+            <div class="col-md-6 mx-auto text-center bg-dark mt-5 p-5 rounded">
                 <h1 id="w-location"></h1>
-                <h3 class="text-dark" id="w-desc"></h3>
-                <h3 id="w-string"></h3>
+                <h3 class="text-light" id="w-desc"></h3>
+                <h3 class="text-light" id="w-string"></h3>
                 <img id="w-icon">
                 <ul id="w-details" class="list-group mt-3">
-                    <li class="list-group-item text-dark" id="w-humidity"></li>
+                    <li class="list-group-item" id="w-humidity"></li>
                     <li class="list-group-item" id="w-dewpoint"></li>
                     <li class="list-group-item" id="w-feels-like"></li>
                     <li class="list-group-item" id="w-wind"></li>
                 </ul>
-                <a id="forecast-link" style="color:rgb(20, 10, 65)" target="_blank" href="http://">See Latest Forcast</a>
-                <hr>
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#locModal">
-                  Change Location
-                </button>
-                <hr>
+                <br>
+                <div class="row center">
+                    <div class="col col-med">
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#locModal">Change Location</button>
+                    </div>
+
+                    <div class="col col-med">
+                        <a id="forecast-link" role="button" class="btn btn-primary" target="_blank" href="http://">See Latest Forcast</a>
+                    </div>
+
+                </div>
+
                 <div class="text-left bg-secondary">
                     <ul id="l-details" class="list-group mt-3">
                         <li class="list-group-item" id="l-station"></li>
@@ -41,6 +46,7 @@
 
                     </ul>
                 </div>
+                <br>
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#moreinfoModal">
                     More Information
                   </button>
@@ -117,10 +123,9 @@
 
 
 
-    <script src="../../common/jQuery/jquery-3.3.1.js"></script>
-    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
-    <script src="../../common/popper/popper.js"></script>
-    <script src="../../common/bootstrap/js/bootstrap.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 
     <script src="storage.js"></script>
     <script src="weather.js"></script>
