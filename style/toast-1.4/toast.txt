@@ -1,0 +1,2 @@
+Toast.js by Jirka Vrba (jirkavrbis)
+version 1.4.2
