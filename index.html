@@ -5,127 +5,157 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://bootswatch.com/4/cerulean/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://bootswatch.com/4/cerulean/bootstrap.min.css"> -->
+
+    <script language="javascript" type="text/javascript" src="./style/jquery-3.3.1.min.js"></script>
+    <script language="javascript" type="text/javascript" src="./style/vue2Dev.js"></script>
+    <script language="javascript" type="text/javascript" src="./style/bootstrap-4.0.0/js/bootstrap.bundle.min.js"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="./style/bootstrap-4.0.0/css/bootstrap.min.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="./style/toast-1.4/toast/toast.css" /> -->
+
     <title>WeatherJS</title>
 </head>
 
 <body>
-    <style>
 
-    </style>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 mx-auto text-center bg-dark mt-5 p-5 rounded">
-                <h1 id="w-location"></h1>
-                <h3 class="text-light" id="w-desc"></h3>
-                <h3 class="text-light" id="w-string"></h3>
-                <img id="w-icon">
-                <ul id="w-details" class="list-group mt-3">
-                    <li class="list-group-item" id="w-humidity"></li>
-                    <li class="list-group-item" id="w-dewpoint"></li>
-                    <li class="list-group-item" id="w-feels-like"></li>
-                    <li class="list-group-item" id="w-wind"></li>
-                </ul>
-                <br>
-                <div class="row center">
-                    <div class="col col-med">
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#locModal">Change Location</button>
-                    </div>
 
-                    <div class="col col-med">
-                        <a id="forecast-link" role="button" class="btn btn-primary" target="_blank" href="http://">See Latest Forcast</a>
-                    </div>
-
-                </div>
-
-                <div class="text-left bg-secondary">
-                    <ul id="l-details" class="list-group mt-3">
-                        <li class="list-group-item" id="l-station"></li>
-                        <li class="list-group-item" id="l-geo"></li>
-                        <li class="list-group-item" id="l-el"></li>
-
+    <div id="app">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mx-auto text-center bg-dark mt-5 p-5 rounded">
+                    <h1 id="w-location"></h1>
+                    <h3 class="text-light" id="w-desc"></h3>
+                    <h3 class="text-light" id="w-string"></h3>
+                    <img id="w-icon">
+                    <ul id="w-details" class="list-group mt-3">
+                        <li class="list-group-item" id="w-humidity"></li>
+                        <li class="list-group-item" id="w-dewpoint"></li>
+                        <li class="list-group-item" id="w-feels-like"></li>
+                        <li class="list-group-item" id="w-wind"></li>
                     </ul>
-                </div>
-                <br>
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#moreinfoModal">
-                    More Information
-                  </button>
-
-            </div>
-
-        </div>
-    </div>
-
-    <!-- Modal -->
-    <div class="modal fade" id="locModal" tabindex="-1" role="dialog" aria-labelledby="locModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="locModalLabel">Choose Location</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-                </div>
-                <div class="modal-body">
-                    <form id="w-form">
-                        <div class="form-group">
-                            <label for="city">City</label>
-                            <input type="text" id="city" class="form-control">
+                    <br>
+                    <div class="row center">
+                        <div class="col col-med">
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#locModal">Change Location</button>
                         </div>
-                        <div class="form-group">
-                            <label for="state">State</label>
-                            <input type="text" id="state" class="form-control">
+
+                        <div class="col col-med">
+                            <a id="forecast-link" role="button" class="btn btn-primary" target="_blank" href="http://">See Latest Forcast</a>
                         </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button id="w-change-btn" type="button" class="btn btn-primary">Save changes</button>
-                </div>
-            </div>
-        </div>
-    </div>
 
+                    </div>
 
-
-    <div class="modal fade" id="moreinfoModal" tabindex="-1" role="dialog" aria-labelledby="moreinfoModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="moreinfoModalLabel">Additional Details</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-                </div>
-
-
-
-                <div class="modal-body">
                     <div class="text-left bg-secondary">
-                        <ul id="more-info" class="list-group mt-3">
-                            <li class="list-group-item" id="more-info-obsTime"></li>
-                            <li class="list-group-item" id="more-info-wind"></li>
-                            <li class="list-group-item" id="more-info-pd"></li>
-
+                        <ul id="l-details" class="list-group mt-3">
+                            <li class="list-group-item" id="l-station"></li>
+                            <li class="list-group-item" id="l-geo"></li>
+                            <li class="list-group-item" id="l-el"></li>
 
                         </ul>
                     </div>
+                    <br>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#moreinfoModal">
+                    More Information
+                  </button>
+
                 </div>
 
+            </div>
+        </div>
 
-
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <!-- Modal -->
+        <div class="modal fade" id="locModal" tabindex="-1" role="dialog" aria-labelledby="locModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="locModalLabel">Choose Location</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="w-form">
+                            <div class="form-group">
+                                <label for="city">City</label>
+                                <input type="text" id="city" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="state">State</label>
+                                <input type="text" id="state" class="form-control">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button id="w-change-btn" type="button" class="btn btn-primary">Save changes</button>
+                    </div>
                 </div>
             </div>
         </div>
+
+
+
+        <div class="modal fade" id="moreinfoModal" tabindex="-1" role="dialog" aria-labelledby="moreinfoModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="moreinfoModalLabel">Additional Details</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="text-left bg-secondary">
+                            <ul id="more-info" class="list-group mt-3">
+                                <li class="list-group-item" id="more-info-obsTime"></li>
+                                <li class="list-group-item" id="more-info-wind"></li>
+                                <li class="list-group-item" id="more-info-pd"></li>
+
+
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
     </div>
 
 
+    <script>
+        new Vue({
+            el: '#app',
+            data() {},
+            computed: {
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+            },
+            mounted: function() {
+
+            },
+            methods: {
+
+            }
+        });
+    </script>
+
+    <style>
+
+    </style>
+
+
+
+
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script> -->
 
     <script src="storage.js"></script>
     <script src="weather.js"></script>
